@@ -1,0 +1,46 @@
+.test_zone_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .test_zone_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .row {
+      display: flex;
+      width: 70%;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 10px 0;
+      border-radius: 5px;
+
+      .test_btn {
+        width: 30%;
+      }
+
+      .test_description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+
+        .test_ds_title {
+          text-align: center;
+          width: 70%;
+        }
+
+        .test_ds_detail {
+          text-align: center;
+          width: 70%;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
