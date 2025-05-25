@@ -112,6 +112,26 @@ services:
     networks:
       - event-net
 
+  web-socket:
+    build:
+      context: ./webSocket
+    volumes:
+      - ./webSocket:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run start:dev
+    ports:
+      - "3300:3300"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    restart: unless-stopped
+    depends_on:
+      - kafka
+      - zookeeper
+    networks:
+      - public-net
+      - kafka-net
+
 volumes:
   auth_db_data:
   event_db_data:
