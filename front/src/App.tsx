@@ -7,6 +7,7 @@ import {
   Route,
   Routes,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import { store } from "./store";
 
@@ -25,6 +26,8 @@ import TestZone from "./components/TestZone";
 
 // components
 import Home from "./components/Home";
+import Sign from './components/Sign/Sign';
+import Game from './components/Game/Game';
 
 const AppContent = () => {
   // default
@@ -48,6 +51,9 @@ const AppContent = () => {
           <ErrorBoundary>
             <Routes>
               <Route path="/home" element={<Home />} />
+              <Route path="/sign" element={<Sign />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="/" element={<Navigate to="/sign" replace />} />
             </Routes>
           </ErrorBoundary>
           {isDev && <TestZone />}
